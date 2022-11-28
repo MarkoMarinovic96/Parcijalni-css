@@ -1,0 +1,14 @@
+@mixin boxCommon() {
+  padding: 200px;
+  position: relative;
+  left: -100vw;
+  border: 2px solid black;
+  font-size: 7rem;
+}
+
+@mixin ani($name, $delay){
+  animation: $name 1.5s ease-in #{$delay}s forwards;
+}
+
+
+

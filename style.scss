@@ -1,0 +1,33 @@
+@import 'base/reset';
+@import 'base/colors';
+@import 'abstracts/mixin';
+
+main{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height:100vh;
+  background-image: url(./blur-clean.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@keyframes left{
+    100%
+    {
+      left:0px;
+    }
+  }
+
+@for $i from 1 through 3 {
+  $delay: calc($i*1.5 - 1.5);
+  div:nth-child(#{$i}) {
+    background-color: rgba(map-get($colors, $i),0.5);
+    @include ani(left,$delay)
+  }
+  
+}
+
+div{
+  @include boxCommon();
+}
